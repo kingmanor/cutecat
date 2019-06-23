@@ -33,9 +33,9 @@ module Cute
   @paint_detected_mode = Paint.detect_mode
 
   def self.rainbow(freq, i)
-     red   = Math.sin(freq*i + 0) * 63 + 192
-     green = Math.sin(freq*i + 2*Math::PI/3) * 63 + 192
-     blue  = Math.sin(freq*i + 4*Math::PI/3) * 63 + 192
+     red   = Math.sin(freq*i + 0) * 95 + 160
+     green = Math.sin(freq*i + 2*Math::PI/3) * 31 + 224
+     blue  = Math.sin(freq*i + 4*Math::PI/3) * 31 + 224
      "#%02X%02X%02X" % [ red, green, blue ]
   end
 
