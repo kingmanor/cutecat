@@ -1,3 +1,3 @@
 module Cutecat
-  VERSION = "99.9.69"
+  VERSION = "0.1.0"
 end
