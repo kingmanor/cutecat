@@ -24,7 +24,7 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 require "cutecat/version"
-require "cutecat/lol"
+require "cutecat/cute"
 
 require 'stringio'
 require 'optimist'

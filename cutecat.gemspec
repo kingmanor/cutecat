@@ -1,15 +1,15 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "lolcat/version"
+require "cutecat/version"
 
 Gem::Specification.new do |s|
-  s.name        = "lolcat"
-  s.version     = Lolcat::VERSION
-  s.authors     = ["Moe"]
-  s.email       = ["moe@busyloop.net"]
-  s.homepage    = "https://github.com/busyloop/lolcat"
-  s.description = %q{Rainbows and unicorns!}
-  s.summary     = %q{Okay, no unicorns. But rainbows!!}
+  s.name        = "cutecat"
+  s.version     = Cutecat::VERSION
+  s.authors     = ["Katie", "Jessica"]
+  s.email       = ["katie@katieford.io", "jessicapruitt717@gmail.com"]
+  s.homepage    = "https://github.com/ClassicKatie/cutecat"
+  s.description = %q{pastels and kitties!}
+  s.summary     = %q{Okay, no kitties. But pastells!!}
 
   s.add_development_dependency "rake"
   s.add_dependency "paint", "~> 2.0.0"
