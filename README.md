@@ -9,5 +9,5 @@
 ## Installation
 
 ```bash
-$ gem install lolcat
+$ gem install cutecat
 ```

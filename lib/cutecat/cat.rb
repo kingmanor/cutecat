@@ -23,19 +23,19 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-require "lolcat/version"
-require "lolcat/lol"
+require "cutecat/version"
+require "cutecat/lol"
 
 require 'stringio'
 require 'optimist'
 
-module Lol
+module Cute
   def self.cat!
     p = Optimist::Parser.new do
-      version "lolcat #{Lolcat::VERSION} (c)2011 moe@busyloop.net"
+      version "cutecat #{Cutecat::VERSION} (c)2011 moe@busyloop.net"
       banner <<HEADER
 
-Usage: lolcat [OPTION]... [FILE]...
+Usage: cutecat [OPTION]... [FILE]...
 
 Concatenate FILE(s), or standard input, to standard output.
 With no FILE, or when FILE is -, read standard input.
@@ -57,13 +57,12 @@ HEADER
       banner <<FOOTER
 
 Examples:
-  lolcat f - g      Output f's contents, then stdin, then g's contents.
-  lolcat            Copy standard input to standard output.
-  fortune | lolcat  Display a rainbow cookie.
+  cutecat f - g      Output f's contents, then stdin, then g's contents.
+  cutecat            Copy standard input to standard output.
+  fortune | cutecat  Display a rainbow cookie.
 
-Report lolcat bugs to <https://github.com/busyloop/lolcat/issues>
-lolcat home page: <https://github.com/busyloop/lolcat/>
-Report lolcat translation bugs to <http://speaklolcat.com/>
+Report cutecat bugs to <https://github.com/ClassicKatie/cutecat/issues>
+cutecat home page: <https://github.com/ClassicKatie/cutecat/>
 
 FOOTER
     end
@@ -83,7 +82,7 @@ FOOTER
           :spread => 8.0,
           :freq => 0.3
         }
-        Lol.cat buf, opts
+        Cute.cat buf, opts
         puts
         buf.close
         exit 1
@@ -106,7 +105,7 @@ FOOTER
           fd = File.open(file, "r") unless fd == $stdin
 
           if $stdout.tty? or opts[:force]
-            Lol.cat fd, opts
+            Cute.cat fd, opts
           else
             if fd.tty?
               fd.each do |line|
@@ -117,13 +116,13 @@ FOOTER
             end
           end
         rescue Errno::ENOENT
-          puts "lolcat: #{file}: No such file or directory"
+          puts "cutecat: #{file}: No such file or directory"
           exit 1
         rescue Errno::EACCES
-          puts "lolcat: #{file}: Permission denied"
+          puts "cutecat: #{file}: Permission denied"
           exit 1
         rescue Errno::EISDIR
-          puts "lolcat: #{file}: Is a directory"
+          puts "cutecat: #{file}: Is a directory"
           exit 1
         rescue Errno::EPIPE
           exit 1

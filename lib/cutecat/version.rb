@@ -1,3 +1,3 @@
-module Lolcat
+module Cutecat
   VERSION = "99.9.69"
 end
