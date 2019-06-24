@@ -29,7 +29,7 @@ require "cutecat/cute"
 require 'stringio'
 require 'optimist'
 
-module Cute
+class Cute
   def self.cat!
     p = Optimist::Parser.new do
       version "cutecat #{Cutecat::VERSION} (c)2011 moe@busyloop.net"
@@ -42,6 +42,7 @@ With no FILE, or when FILE is -, read standard input.
 
 HEADER
       banner ''
+      opt :theme, "Rainbow theme", :theme => 'e', :default => 'default'
       opt :spread, "Rainbow spread", :short => 'p', :default => 3.0
       opt :freq, "Rainbow frequency", :short => 'F', :default => 0.1
       opt :seed, "Rainbow seed, 0 = random", :short => 'S', :default => 0
@@ -52,7 +53,7 @@ HEADER
       opt :truecolor, "24-bit (truecolor)", :short => 't', :default => false
       opt :number, "Show line numbers", :short => 'n', :default => false
       opt :force, "Force color even when stdout is not a tty", :short => 'f', :default => false
-      opt :version,  "Print version and exit", :short => 'v'
+      opt :version,  "Print version and exit", :short => 'v', :default => 'pastel'
       opt :help,  "Show this message", :short => 'h'
       banner <<FOOTER
 

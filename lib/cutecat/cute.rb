@@ -26,17 +26,80 @@
 require "cutecat/version"
 require 'paint'
 
-module Cute
+class Cute
   ANSI_ESCAPE = /((?:\e(?:[ -\/]+.|[\]PX^_][^\a\e]*|\[[0-?]*.|.))*)(.?)/m
   INCOMPLETE_ESCAPE = /\e(?:[ -\/]*|[\]PX^_][^\a\e]*|\[[0-?]*)$/
 
   @paint_detected_mode = Paint.detect_mode
 
-  def self.rainbow(freq, i)
-     red   = Math.sin(freq*i + 0) * 95 + 160
-     green = Math.sin(freq*i + 2*Math::PI/3) * 31 + 224
-     blue  = Math.sin(freq*i + 4*Math::PI/3) * 31 + 224
-     "#%02X%02X%02X" % [ red, green, blue ]
+  attr_accessor :freq, :i, :theme
+
+  def initialize(freq, i, theme = 'default')
+    @freq = freq
+    @i = i
+    @theme = theme
+    @red_one = red_number_one
+    @red_two = red_number_two
+    @green_one = green_number_one
+    @green_two = green_number_two
+    @blue_one = blue_number_one
+    @blue_two = blue_number_two
+  end
+
+  THEME_NUMBERS = {
+    'default' => {
+      'red' => [63, 192],
+      'green' => [63, 192],
+      'blue' => [63, 192]
+    },
+    'light' => {
+      'red' => [95, 160],
+      'green' => [31, 224],
+      'blue' => [31, 224]
+    }
+  }
+
+  def red_number_one
+    THEME_NUMBERS[theme]['red'][0]
+  end
+
+  def red_number_two
+    THEME_NUMBERS[theme]['red'][1]
+  end
+
+  def green_number_one
+    THEME_NUMBERS[theme]['green'][0]
+  end
+
+  def green_number_two
+    THEME_NUMBERS[theme]['green'][1]
+  end
+
+  def blue_number_one
+    THEME_NUMBERS[theme]['blue'][0]
+  end
+
+  def blue_number_two
+    THEME_NUMBERS[theme]['blue'][1]
+  end
+
+  def rainbow
+   red = get_red
+   green = get_green
+   blue = get_blue
+   "#%02X%02X%02X" % [ red, green, blue ]
+  end
+
+  def get_red
+    Math.sin(freq*i + 0) * @red_one + @red_two
+  end
+
+  def get_green
+    Math.sin(freq*i + 2*Math::PI/3) * @green_one + @green_two
+  end
+
+  def get_blue
+    Math.sin(freq*i + 4*Math::PI/3) * @blue_one + @blue_two
   end
 
   def self.cat(fd, opts={})
@@ -79,7 +142,8 @@ module Cute
     opts.merge!(defaults)
     set_mode(opts[:truecolor])
     str.scan(ANSI_ESCAPE).each_with_index do |c,i|
-      color = rainbow(opts[:freq], opts[:os]+i/opts[:spread])
+      # color = rainbow(opts[:freq], opts[:os]+i/opts[:spread])
+      color = Cute.new(opts[:freq], opts[:os]+i/opts[:spread], opts[:theme]).rainbow
       if opts[:invert] then
         print c[0], Paint.color(nil, color), c[1], "\e[49m"
       else
