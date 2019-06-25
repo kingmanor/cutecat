@@ -32,18 +32,12 @@ class Cute
 
   @paint_detected_mode = Paint.detect_mode
 
-  attr_accessor :freq, :i, :theme
+  attr_reader :freq, :i, :theme
 
   def initialize(freq, i, theme = 'default')
     @freq = freq
     @i = i
     @theme = theme
-    @red_one = red_number_one
-    @red_two = red_number_two
-    @green_one = green_number_one
-    @green_two = green_number_two
-    @blue_one = blue_number_one
-    @blue_two = blue_number_two
   end
 
   THEME_NUMBERS = {
@@ -91,15 +85,15 @@ class Cute
   end
 
   def get_red
-    Math.sin(freq*i + 0) * @red_one + @red_two
+    Math.sin(freq*i + 0) * red_number_one + red_number_two
   end
 
   def get_green
-    Math.sin(freq*i + 2*Math::PI/3) * @green_one + @green_two
+    Math.sin(freq*i + 2*Math::PI/3) * green_number_one + green_number_two
   end
 
   def get_blue
-    Math.sin(freq*i + 4*Math::PI/3) * @blue_one + @blue_two
+    Math.sin(freq*i + 4*Math::PI/3) * blue_number_one + blue_number_two
   end
 
   def self.cat(fd, opts={})

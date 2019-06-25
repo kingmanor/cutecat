@@ -76,6 +76,7 @@ FOOTER
         p.educate buf
         buf.rewind
         opts = {
+          :theme => 'default',
           :animate => false,
           :duration => 12,
           :os => rand(256),
