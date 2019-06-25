@@ -1,10 +1,10 @@
 # What?
 
-![](http://i3.photobucket.com/albums/y83/SpaceGirl3900/LOLCat-Rainbow.jpg)
+![](https://github.com/ClassicKatie/cutecat/raw/master/ass/cutecat_header01.jpg)
 
 ## Screenshot
 
-![](https://github.com/busyloop/lolcat/raw/master/ass/screenshot.png)
+![](https://github.com/ClassicKatie/cutecat/raw/master/ass/cutecat_help.png)
 
 ## Installation
 
