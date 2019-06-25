@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Katie", "Jessica"]
   s.email       = ["katie@katieford.io", "jessicapruitt717@gmail.com"]
   s.homepage    = "https://github.com/ClassicKatie/cutecat"
-  s.description = %q{pastels and kitties!}
-  s.summary     = %q{Okay, no kitties. But pastells!!}
+  s.description = %q{a cuter version of lolcat!}
+  s.summary     = %q{a modified version of lolcat that uses pastels}
 
   s.add_development_dependency "rake"
   s.add_dependency "paint", "~> 2.0.0"
