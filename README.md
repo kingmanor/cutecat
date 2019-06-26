@@ -1,6 +1,6 @@
 # What?
 
-![](https://i.imgur.com/4WKctZU.jpg)
+![](http://i3.photobucket.com/albums/y83/SpaceGirl3900/LOLCat-Rainbow.jpg)
 
 ## Screenshot
 
