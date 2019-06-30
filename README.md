@@ -1,10 +1,10 @@
 # What?
 
-![](https://i.imgur.com/4WKctZU.jpg)
+![](https://github.com/ClassicKatie/cutecat/raw/master/ass/cutecat_header01.jpg)
 
 ## Screenshot
 
-![](https://github.com/busyloop/lolcat/raw/master/ass/screenshot.png)
+![](https://github.com/ClassicKatie/cutecat/raw/master/ass/cutecat_help.png)
 
 ## Installation
 

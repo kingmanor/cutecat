@@ -1,7 +1,7 @@
-.TH CUTECAT 6 "April 4, 2019"
+.TH CUTECAT 6 "June 25, 2019"
 .\" Please adjust this date whenever revising the manpage.
 .SH NAME
-cutecat \- rainbow coloring effect for text console display
+cutecat \- pastel gradient coloring effect for text console display
 
 .SH SYNOPSIS
 .B cutecat
@@ -13,19 +13,22 @@ This manual page documents briefly the
 command.
 .PP
 \fBcutecat\fP is a program that concatenates files, or standard input, to
-standard output (like the generic \fBcat\fP), and adds rainbow coloring to it.
+standard output (like the generic \fBcat\fP), and adds pastel gradient coloring to it.
 It is a fork of \fBlolcat\fP
 
 .SH OPTIONS
 
 .TP
+\fB\-p\fP \fIX\fP, \fB\-\-theme=\fIX\fP
+Theme to be applied
+.br
 \fB\-p\fP \fIX\fP, \fB\-\-spread=\fIX\fP
-Inclination of the rainbow stripes
+Inclination of the gradient stripes
 .br
 (character widths per line hight; high values (>1000) give almost horizonal stripes, low values (0.1) almost vertical ones; default: 3.0).
 .TP
 \fB\-F\fP \fIX\fP, \fB\-\-freq=\fIX\fP
-Frequency of the rainbow effect.
+Frequency of the gradient effect.
 .br
 (low values around 0.0001 give almost monochromous screens; default: 0.1).
 .TP
